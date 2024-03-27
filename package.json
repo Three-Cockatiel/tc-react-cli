@@ -1,6 +1,6 @@
 {
   "name": "tc-react-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于vite+antd+react搭建的admin系统脚手架脚本",
   "bin": {
     "tcr": "./bin/index.js"
