@@ -7,16 +7,16 @@
   },
   "lint-staged": {
     "**/*.{js,ts}": [
-      "npm run lint",
+      "eslint --fix",
       "git add ."
     ]
   },
   "scripts": {
-    "prepare": "husky",
-    "lint": "eslint --fix src --report-unused-disable-directives --max-warnings 0",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "lint": "eslint --fix \"./src/**/*.{ts,js}\" --report-unused-disable-directives --max-warnings 0",
     "prettier": "prettier --write \"src/**/*.ts\"",
-    "build": "npm run lin && npm run prettier && tsc --build",
-    "dev": "ts-node-dev --respawn --transpile-only src/index.js"
+    "build": "npm run lint && npm run prettier && tsc --build",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
     "antd",
     "admin"
   ],
-  "author": "hwj",
+  "author": "hwj <mail781890163@gmail.com> (https://github.com/Culaccino9)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Three-Cockatiel/tc-react-cli/issues"
@@ -37,11 +37,23 @@
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
+    "@types/node": "^20.11.30",
     "commitlint": "^19.2.1",
     "eslint": "^8.57.0",
     "eslint-config-tc-react": "^1.0.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "download-git-repo": "^3.0.2",
+    "figlet": "^1.7.0",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^9.2.16",
+    "ora": "^8.0.1"
   }
 }

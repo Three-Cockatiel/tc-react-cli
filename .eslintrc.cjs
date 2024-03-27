@@ -1,4 +1,4 @@
-module.export = {
+module.exports = {
   extends: ['tc-react'],
   parserOptions: {
     requireConfigFile: false,
@@ -8,7 +8,7 @@ module.export = {
       version: '999.999.999', // 因为使用的是react的规则，要把eslint的react规则禁用掉
     },
   },
-  rule: {
+  rules: {
     '@typescript-eslint/no-var-requires': 'off',
   },
 };
