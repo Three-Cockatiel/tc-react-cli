@@ -1,0 +1,47 @@
+{
+  "name": "tc-react-cli",
+  "version": "1.0.0",
+  "description": "基于vite+antd+react搭建的admin系统脚手架脚本",
+  "bin": {
+    "tcr": "./bin/index.js"
+  },
+  "lint-staged": {
+    "**/*.{js,ts}": [
+      "npm run lint",
+      "git add ."
+    ]
+  },
+  "scripts": {
+    "prepare": "husky",
+    "lint": "eslint --fix src --report-unused-disable-directives --max-warnings 0",
+    "prettier": "prettier --write \"src/**/*.ts\"",
+    "build": "npm run lin && npm run prettier && tsc --build",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Three-Cockatiel/tc-react-cli.git"
+  },
+  "keywords": [
+    "vite",
+    "react",
+    "antd",
+    "admin"
+  ],
+  "author": "hwj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Three-Cockatiel/tc-react-cli/issues"
+  },
+  "homepage": "https://github.com/Three-Cockatiel/tc-react-cli#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "commitlint": "^19.2.1",
+    "eslint": "^8.57.0",
+    "eslint-config-tc-react": "^1.0.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5"
+  }
+}
